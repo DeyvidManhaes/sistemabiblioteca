@@ -7,17 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef59db27-a000-4a3c-bf7e-44bf00549e09" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/br/edu/femass/model/AutorTest.java" afterDir="false" />
+    <list default="true" id="ef59db27-a000-4a3c-bf7e-44bf00549e09" name="Changes" comment="Inicio teste">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/femass/dao/DaoAutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/edu/femass/model/AlunoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/edu/femass/model/EmprestimoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/edu/femass/model/ExemplarTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/edu/femass/model/LeitorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/edu/femass/model/LivroTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/edu/femass/model/ProfessorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Aluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Autor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Autor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Emprestimo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Emprestimo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Exemplar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Exemplar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Leitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Leitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Livro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Livro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Professor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,8 +115,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665879210540</updated>
-      <workItem from="1665879212012" duration="16175000" />
+      <workItem from="1665879212012" duration="18996000" />
     </task>
+    <task id="LOCAL-00001" summary="Inicio teste">
+      <created>1665971781052</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665971781053</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,5 +140,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Inicio teste" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inicio teste" />
   </component>
 </project>
