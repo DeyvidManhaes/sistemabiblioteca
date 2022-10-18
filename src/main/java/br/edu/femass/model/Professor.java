@@ -13,6 +13,10 @@ public class Professor extends Leitor {
         this.disciplina = disciplina;
 
     }
+    public  Professor(){
+
+    }
+
         public String getDisciplina() {
             return disciplina;
         }

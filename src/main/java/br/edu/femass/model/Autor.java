@@ -16,6 +16,9 @@ public class Autor {
         this.livros = new ArrayList<Livro>();
 
     }
+    public  Autor(){
+
+    }
 
     public void setNome(String nome) {
         this.nome = nome;

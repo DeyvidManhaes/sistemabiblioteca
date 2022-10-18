@@ -8,15 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef59db27-a000-4a3c-bf7e-44bf00549e09" name="Changes" comment="Inicio teste">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/femass/dao/DaoAutor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/br/edu/femass/model/AlunoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/br/edu/femass/model/EmprestimoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/br/edu/femass/model/ExemplarTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/br/edu/femass/model/LeitorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/br/edu/femass/model/LivroTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/br/edu/femass/model/ProfessorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/femass/dao/DaoAutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/femass/dao/DaoAutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Aluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Autor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Autor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Exemplar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Exemplar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Leitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Leitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/femass/model/Professor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,19 +45,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -115,7 +114,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665879210540</updated>
-      <workItem from="1665879212012" duration="18996000" />
+      <workItem from="1665879212012" duration="19193000" />
+      <workItem from="1666054284177" duration="3728000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio teste">
       <created>1665971781052</created>
@@ -124,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665971781053</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Inicio teste">
+      <created>1665974392422</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665974392422</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

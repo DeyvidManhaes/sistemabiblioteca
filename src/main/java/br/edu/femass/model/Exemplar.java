@@ -12,6 +12,9 @@ public class Exemplar {
         this.dataAquisicao = dataAquisicao;
         this.livro = livro;
     }
+    public Exemplar(){
+
+    }
 
     public Long getCodigo() {
         return codigo;

@@ -7,6 +7,10 @@ public class Aluno extends Leitor {
         super(codigo, nome, endereco, telefone);
         this.matricula = matricula;
     }
+    public  Aluno(){
+        super();
+
+    }
 
     public String getMatricula() {
         return matricula;

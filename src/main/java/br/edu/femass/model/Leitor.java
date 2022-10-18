@@ -19,6 +19,10 @@ public class Leitor {
         this.telefone = telefone;
         this.emprestimos = new ArrayList<Emprestimo>();
     }
+    public Leitor(){
+
+    }
+
     public void ciarEmprestimo(){
 
     }
