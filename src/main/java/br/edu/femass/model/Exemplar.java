@@ -1,6 +1,7 @@
 package br.edu.femass.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Exemplar {
     private Long codigo = 1L;
@@ -24,6 +25,23 @@ public class Exemplar {
 
     }
 
+    public String toString(){
+    return this.gettituloExemplar() + " " + this.getCodigo()
+            .toString();
+    }
+
+    public void proximoId() throw Exception{
+    Long m = 0L;
+
+    List<Exemplar> exemplares = new DaoExemplar().getAll();
+    for(Exemplar exemplar : exemplares){
+        if (exemplar.getCodigo()>m){
+    m = exemplar.getCodigo();
+    setCodigo(m + 1);
+        }
+      }
+    }
+
     public Long getCodigo() {
         return codigo;
     }
@@ -35,16 +53,17 @@ public class Exemplar {
     public LocalDate getDataAquisicao() {
         return dataAquisicao;
     }
-
-    public void setDataAquisicao(LocalDate dataAquisicao) {
-        this.dataAquisicao = dataAquisicao;
+    public  String gettituloExemplar(){
+        return tituloExemplar;
     }
 
-    public Livro getLivro() {
-        return livro;
+    public void setDisponivel(boolean disponivel){
+       this.disponivel = disponivel;
+    }
+    public boolean getDisponivel(){
+       return disponivel;
     }
 
-    public void setLivro(Livro livro) {
-        this.livro = livro;
-    }
+
+
 }

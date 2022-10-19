@@ -6,9 +6,10 @@ import java.util.List;
 
 public class Livro {
 
-    private Long codigo;
+    private Long codigo = 1L;
     private String titulo;
-    private List <Autor> autores;
+
+    private
     private List <Exemplar> exemplares;
 
     public Livro(Long codigo, String titulo) {

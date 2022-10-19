@@ -32,7 +32,7 @@ public class Emprestimo {
         new DaoLivro().update(livro);
 
         this.nomeEmprestimo = exemplar.getTituloExemplar() + " - " +
-                " - "+ exemplar.getCodigo()+ " - " + leitor.getNome();
+                " - "+ exemplar.getCodigo()+ " - " + Leitor.getNome();
     }
     public Emprestimo (){
 
