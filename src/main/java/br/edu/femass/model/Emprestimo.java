@@ -2,28 +2,63 @@ package br.edu.femass.model;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Emprestimo {
     private LocalDate dataEmprestimo;
     private LocalDate dataPrevistaDevolucao;
-    private LocalDate dataDevolucao;
+    private LocalDate dataDevolucao = null;
     private Exemplar exemplar;
-    private Leitor leitor;
+    private Livro livro;
+    private String nomeEmprestimo;
 
 
-    public Emprestimo(LocalDate dataPrevistaDevolucao, Exemplar exemplar, Leitor leitor) {
+    public Emprestimo(Leitor leitor, Livro livro) throw Exception{
         this.dataEmprestimo = LocalDate.now();
-        this.dataPrevistaDevolucao = dataPrevistaDevolucao;
+        this.dataPrevistaDevolucao = LocalDate.now().plusDays(leitor.getPrazoMaximoDevolucao());
         this.dataDevolucao = dataDevolucao;
-        this.exemplar = exemplar;
-        this.leitor = leitor;
+        this.livro = livro;
+
+        List<Exemplar> exemplares = livro.getListaExemplares();
+
+        for (Exemplar exemplar : exemplares){
+            if (exemplar.getDisponivel() ==true){
+                exemplar.setDisponivel(false);
+                this.exemplar = exemplar;
+                new DaoExemplar().update(exemplar);
+            }
+
+        }
+        new DaoLivro().update(livro);
+
+        this.nomeEmprestimo = exemplar.getTituloExemplar() + " - " +
+                " - "+ exemplar.getCodigo()+ " - " + leitor.getNome();
     }
     public Emprestimo (){
 
     }
+    public  void aceitarDevolucao() throws Exception{
+        this.dataDevolucao = LocalDate.now();
+        this.exemplar.setDisponivel(true);
+        new DaoEmprestimo().update(this);
+        new DaoExemplar().update(this.exemplar);
+        new DaoLivro().update(this.livro);
+    }
 
+    public  String toString(){
+        return this.nomeEmprestimo;
+    }
 
+    public boolean equals (Object obj){
+        Emprestimo emprestimo = (Emprestimo) obj;
+        return emprestimo.getNomeEmprestimo()
+                .equals(this.nomeEmprestimo);
+    }
 
+    public boolean verificaAtraso(){
+        return this.getDataPrevistaDevolucao()
+                .isBefore(LocalDate.now());
+    }
     public LocalDate getDataEmprestimo() {
         return dataEmprestimo;
     }
@@ -56,11 +91,7 @@ public class Emprestimo {
         this.exemplar = exemplar;
     }
 
-    public Leitor getLeitor() {
-        return leitor;
-    }
-
-    public void setLeitor(Leitor leitor) {
-        this.leitor = leitor;
+    public String getNomeEmprestimo(){
+        return nomeEmprestimo;
     }
 }

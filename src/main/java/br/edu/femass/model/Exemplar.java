@@ -3,15 +3,23 @@ package br.edu.femass.model;
 import java.time.LocalDate;
 
 public class Exemplar {
-    private Long codigo;
+    private Long codigo = 1L;
     private LocalDate dataAquisicao;
-    private Livro livro;
+    public boolean disponivel;
+    public  String tituloExemplar;
 
-    public Exemplar(Long codigo, LocalDate dataAquisicao, Livro livro) {
+    public Exemplar(Livro livro) throws Exception{
+        Long codigo, LocalDate
+    } dataAquisicao, Livro livro) {
         this.codigo = codigo;
-        this.dataAquisicao = dataAquisicao;
-        this.livro = livro;
+        this.dataAquisicao = LocalDate.now();
+        this.tituloExemplar = livro.toString();
+        this.proximoId();
+        this.disponivel = true;
+
+        livro.addListaExemplares(this);
     }
+
     public Exemplar(){
 
     }
