@@ -1,48 +1,37 @@
 package br.edu.femass.dao;
 
+
 import br.edu.femass.model.Autor;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.json.JsonMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DaoAutor {
+public class DaoAutor extends Persistence<Autor> implements Dao<Autor> {
 
-private static List<Autor> autores = new ArrayList<Autor>();
+    private final static String NOMEARQUIVO = "autores.json";
 
-public void gravar(Autor autor) throws Exception{
-    autores.add(autor);
+    public void save(Autor autor) throws Exception{
+        List<Autor> autores = getAll();
 
-    ObjectMapper objectMapper = JsonMapper.builder()
-            .addModule(new JavaTimeModule())
-            .build()
-            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-    String json = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(autores);
+        autores.add(autor);
+        String json = getObjectmapper().writerWithDefaultPrettyPrinter().writeValueAsString(autores);
 
-    FileOutputStream out = new FileOutputStream("autor.json");
-    out.write(json.getBytes());
-    out.close();
-
+        FileOutputStream out = new FileOutputStream(NOMEARQUIVO);
+        out.write(json.getBytes());
+        out.close();
     }
 
-public  List<Autor> getAutores() throws  Exception{
-
-    FileInputStream in = new FileInputStream("autor.json");
-    String json = new String(in.readAllBytes());
-
-    ObjectMapper objectMapper = JsonMapper.builder()
-            .addModule(new JavaTimeModule())
-            .build()
-            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-    objectMapper.readValue(json, new TypeReference<List<Autor>>(){});
-
-    return autores;
-   }
-
+    public List<Autor> getAll() throws Exception{
+        try{
+            FileInputStream in = new FileInputStream(NOMEARQUIVO);
+            String json = new String(in.readAllBytes());
+            List<Autor> autores = getObjectmapper().readValue(json, new TypeReference<List<Autor>>(){});
+            return autores;
+        } catch (FileNotFoundException f){
+            return new ArrayList();
+        }
+    }
 }

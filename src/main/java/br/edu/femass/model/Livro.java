@@ -8,21 +8,35 @@ public class Livro {
 
     private Long codigo = 1L;
     private String titulo;
+    private  Integer ano;
+    private List<Autor> listaAutores = new ArrayList<>();
+    private  List<Exemplar> listaExemplares = new ArrayList<>();
 
-    private
-    private List <Exemplar> exemplares;
+    public Livro(String titulo, List<Autor> autores, Integer ano) throws Exception {
 
-    public Livro(Long codigo, String titulo) {
-        this.codigo = codigo;
         this.titulo = titulo;
-        this.autores = new ArrayList<Autor>();
-        this.exemplares = new ArrayList<Exemplar>();
+        listaAutores.addAll(autores);
+        this.ano = ano;
+        proximoId();
     }
     public Livro (){
 
     }
+    public  String toString(){
+        return this.titulo;
+    }
 
+    public void  proximoId() throws  Exception{
+        Long m = 0L;
 
+        List<Livro> livros = new DaoLivro().getAll();
+        for (Livro livro : livros){
+            if (livro.getCodigo()>m){
+                m=livro.getCodigo();
+                setCodigo(m+1);
+            }
+        }
+    }
     public Long getCodigo() {
         return codigo;
     }
@@ -30,20 +44,38 @@ public class Livro {
     public String getTitulo() {
         return titulo;
     }
-
-    public List<Autor> getAutores() {
-        return autores;
+    public void setCodigo(Long codigo){
+        this.codigo = codigo;
     }
 
-    public List<Exemplar> getExemplares() {
-        return exemplares;
+    public List<Autor> getListaAutores() {
+        return listaAutores;
     }
-    public void cadastarAutor(String nome, String sobrenome, String nacionalidade){
-        Autor autor = new Autor(nome,sobrenome,nacionalidade);
-        this.autores.add(autor);
+
+    public List<Exemplar> getListaExemplares() {
+        return listaExemplares;
     }
-    public void cadastrarExemplar(Long codigo, LocalDate dataAquisicao, Livro livro){
-        Exemplar exemplar = new Exemplar(codigo, dataAquisicao, livro);
-        this.exemplares.add(exemplar);
+    public  void setTitulo(String titulo){
+        this.titulo = titulo;
+    }
+
+    public void setListaAutores(List<Autor> listaAutores) {
+        this.listaAutores = listaAutores;
+    }
+
+    public void addListaExemplares(Exemplar exemplar) {
+        this.listaExemplares.add(exemplar);
+    }
+
+    public void setListaExemplares(List<Exemplar> exemplares) {
+        this.listaExemplares = exemplares;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
     }
 }

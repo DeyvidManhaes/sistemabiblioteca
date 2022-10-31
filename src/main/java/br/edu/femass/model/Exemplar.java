@@ -10,12 +10,10 @@ public class Exemplar {
     public  String tituloExemplar;
 
     public Exemplar(Livro livro) throws Exception{
-        Long codigo, LocalDate
-    } dataAquisicao, Livro livro) {
-        this.codigo = codigo;
+
+        this.proximoId();
         this.dataAquisicao = LocalDate.now();
         this.tituloExemplar = livro.toString();
-        this.proximoId();
         this.disponivel = true;
 
         livro.addListaExemplares(this);

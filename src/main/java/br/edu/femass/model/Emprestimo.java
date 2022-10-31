@@ -16,7 +16,6 @@ public class Emprestimo {
     public Emprestimo(Leitor leitor, Livro livro) throw Exception{
         this.dataEmprestimo = LocalDate.now();
         this.dataPrevistaDevolucao = LocalDate.now().plusDays(leitor.getPrazoMaximoDevolucao());
-        this.dataDevolucao = dataDevolucao;
         this.livro = livro;
 
         List<Exemplar> exemplares = livro.getListaExemplares();
@@ -32,7 +31,7 @@ public class Emprestimo {
         new DaoLivro().update(livro);
 
         this.nomeEmprestimo = exemplar.getTituloExemplar() + " - " +
-                " - "+ exemplar.getCodigo()+ " - " + Leitor.getNome();
+                exemplar.getCodigo()+ " - " + Leitor.getNome();
     }
     public Emprestimo (){
 
@@ -63,16 +62,8 @@ public class Emprestimo {
         return dataEmprestimo;
     }
 
-    public void setDataEmprestimo(LocalDate dataEmprestimo) {
-        this.dataEmprestimo = dataEmprestimo;
-    }
-
     public LocalDate getDataPrevistaDevolucao() {
         return dataPrevistaDevolucao;
-    }
-
-    public void setDataPrevistaDevolucao(LocalDate dataPrevistaDevolucao) {
-        this.dataPrevistaDevolucao = dataPrevistaDevolucao;
     }
 
     public LocalDate getDataDevolucao() {
@@ -85,10 +76,6 @@ public class Emprestimo {
 
     public Exemplar getExemplar() {
         return exemplar;
-    }
-
-    public void setExemplar(Exemplar exemplar) {
-        this.exemplar = exemplar;
     }
 
     public String getNomeEmprestimo(){
